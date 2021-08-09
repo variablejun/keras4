@@ -1,0 +1,1 @@
+#이진분류지만 다중분류사용 ->softmax와 categorycal
