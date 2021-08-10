@@ -15,7 +15,7 @@ x_train, x_test, y_train, y_test = train_test_split(x,y,
 train_size = 0.7, random_state=76)
 
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
-scaler = MinMaxScaler()
+scaler = StandardScaler()
 scaler.fit(x_train) 
 x_train = scaler.transform(x_train) 
 x_test = scaler.transform(x_test)
@@ -37,7 +37,7 @@ for (name, algorythsm) in allAllalgorythsm2:
           model = algorythsm()
           model.fit(x_train,y_train)
           y_predict = model.predict(x_test)
-          acc = accuracy_score(y_test,y_predict)
+          acc = r2_score(y_test,y_predict)
           print(name,'의 acc : ',acc)
      except:
           print(name,'없는것')
@@ -46,7 +46,60 @@ for (name, algorythsm) in allAllalgorythsm2:
 '''
 분류모델로 돌릴경우 값도 제대로 안나오고 속도도 많이 느리다.
 MinMaxScaler
-
+ARDRegression 의 acc :  0.7207175586512667
+AdaBoostRegressor 의 acc :  0.8295615566462063
+BaggingRegressor 의 acc :  0.8575032894948996
+BayesianRidge 의 acc :  0.721603290752266
+CCA 의 acc :  0.6236875820293413
+DecisionTreeRegressor 의 acc :  0.7464587906775318
+DummyRegressor 의 acc :  -0.014319569088965922
+ElasticNet 의 acc :  0.17682283998086357
+ElasticNetCV 의 acc :  0.7308918525077632
+ExtraTreeRegressor 의 acc :  0.6980896559037671
+ExtraTreesRegressor 의 acc :  0.8885028103361561
+GammaRegressor 의 acc :  0.19926394493329658
+GaussianProcessRegressor 의 acc :  -0.2478397895482829
+GradientBoostingRegressor 의 acc :  0.8729474608917726
+HistGradientBoostingRegressor 의 acc :  0.8607348134767078
+HuberRegressor 의 acc :  0.7464254354183177
+IsotonicRegression 없는것
+KNeighborsRegressor 의 acc :  0.7008122126350649
+KernelRidge 의 acc :  0.6578336575729304
+Lars 의 acc :  0.7156778188107706
+LarsCV 의 acc :  0.7255385058810935
+Lasso 의 acc :  0.342471641466883
+LassoCV 의 acc :  0.7215483085857873
+LassoLars 의 acc :  -0.014319569088965922
+LassoLarsCV 의 acc :  0.7196372557659261
+LassoLarsIC 의 acc :  0.7182403396119904
+LinearRegression 의 acc :  0.7159952162619656
+LinearSVR 의 acc :  0.6425338317571643
+MLPRegressor 의 acc :  0.12064532578730014
+MultiOutputRegressor 없는것
+MultiTaskElasticNet 없는것
+MultiTaskElasticNetCV 없는것
+MultiTaskLasso 없는것
+MultiTaskLassoCV 없는것
+NuSVR 의 acc :  0.6118115608281913
+OrthogonalMatchingPursuit 의 acc :  0.4765510501802527
+OrthogonalMatchingPursuitCV 의 acc :  0.6891771491719336
+PLSCanonical 의 acc :  -3.211630124846253
+PLSRegression 의 acc :  0.7490133018126226
+PassiveAggressiveRegressor 의 acc :  0.7585196787410856
+PoissonRegressor 의 acc :  0.650013404250769
+RANSACRegressor 의 acc :  0.6427590167639392
+RadiusNeighborsRegressor 의 acc :  0.3321024717483456
+RandomForestRegressor 의 acc :  0.8636771069340384
+RegressorChain 없는것
+Ridge 의 acc :  0.7301885676967046
+RidgeCV 의 acc :  0.7187847665990533
+SGDRegressor 의 acc :  0.7210791574553757
+SVR 의 acc :  0.6455875874652905
+StackingRegressor 없는것
+TheilSenRegressor 의 acc :  0.7571715362780473
+TransformedTargetRegressor 의 acc :  0.7159952162619656
+TweedieRegressor 의 acc :  0.19021067033855799
+VotingRegressor 없는것
 ===============================================================
 
 StandardScaler
