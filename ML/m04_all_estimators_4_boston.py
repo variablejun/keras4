@@ -103,5 +103,58 @@ VotingRegressor 없는것
 ===============================================================
 
 StandardScaler
-
+ARDRegression 의 acc :  0.7207168832130914
+AdaBoostRegressor 의 acc :  0.8203510376906169
+BaggingRegressor 의 acc :  0.8539696186533101
+BayesianRidge 의 acc :  0.7220699524590716
+CCA 의 acc :  0.623687582029342
+DecisionTreeRegressor 의 acc :  0.7597704474421448
+DummyRegressor 의 acc :  -0.014319569088965922
+ElasticNet 의 acc :  0.6890709912539126
+ElasticNetCV 의 acc :  0.7260284022716572
+ExtraTreeRegressor 의 acc :  0.7420142059658883
+ExtraTreesRegressor 의 acc :  0.8830533668938467
+GammaRegressor 의 acc :  0.6851519031174427
+GaussianProcessRegressor 의 acc :  0.4353368832508927
+GradientBoostingRegressor 의 acc :  0.8763374219807245
+HistGradientBoostingRegressor 의 acc :  0.8608461771215346
+HuberRegressor 의 acc :  0.7464389240830045
+IsotonicRegression 없는것
+KNeighborsRegressor 의 acc :  0.7287828630981212
+KernelRidge 의 acc :  -7.045992533531814
+Lars 의 acc :  0.7156778188107706
+LarsCV 의 acc :  0.7255385058810935
+Lasso 의 acc :  0.6903178291309635
+LassoCV 의 acc :  0.7197334859523027
+LassoLars 의 acc :  -0.014319569088965922
+LassoLarsCV 의 acc :  0.7196372557659254
+LassoLarsIC 의 acc :  0.7182403396119904
+LinearRegression 의 acc :  0.7159952162619658
+LinearSVR 의 acc :  0.7394999102503752
+MLPRegressor 의 acc :  0.6697186552783139
+MultiOutputRegressor 없는것
+MultiTaskElasticNet 없는것
+MultiTaskElasticNetCV 없는것
+MultiTaskLasso 없는것
+MultiTaskLassoCV 없는것
+NuSVR 의 acc :  0.6767520605657991
+OrthogonalMatchingPursuit 의 acc :  0.4765510501802527
+OrthogonalMatchingPursuitCV 의 acc :  0.6891771491719336
+PLSCanonical 의 acc :  -3.2116301248462573
+PLSRegression 의 acc :  0.7490133018126225
+PassiveAggressiveRegressor 의 acc :  0.35483070861247623
+PoissonRegressor 의 acc :  0.812103359049245
+RANSACRegressor 의 acc :  0.16210290688068352
+RadiusNeighborsRegressor 없는것
+RandomForestRegressor 의 acc :  0.8618422779047761
+RegressorChain 없는것
+Ridge 의 acc :  0.7173525038637134
+RidgeCV 의 acc :  0.7173525038638984
+SGDRegressor 의 acc :  0.7159628404584747
+SVR 의 acc :  0.6854386986018963
+StackingRegressor 없는것
+TheilSenRegressor 의 acc :  0.6641330250071776
+TransformedTargetRegressor 의 acc :  0.7159952162619658
+TweedieRegressor 의 acc :  0.6709589351580008
+VotingRegressor 없는것
 '''
