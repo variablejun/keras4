@@ -1,11 +1,11 @@
 import numpy as np 
-from sklearn.datasets import load_iris
+from sklearn.datasets import load_breast_cancer
 from tensorflow.keras.models import Sequential 
 from tensorflow.keras.layers import Dense
 import warnings
 warnings.filterwarnings('ignore') # 워닝 무시
 
-dataset = load_iris()
+dataset = load_breast_cancer()
 print(dataset.DESCR)
 print(dataset.feature_names)
 
@@ -30,25 +30,26 @@ from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 from sklearn.pipeline import make_pipeline, Pipeline
 '''
-params = [{'randomfroestclassifier__n_estimators':[100,200],'randomfroestclassifier__min_samples_leaf' : [3,5,7,10],'randomfroestclassifier__max_depth' : [6,8,10,12],'randomfroestclassifier__min_samples_split' : [2,3,5,10],'randomfroestclassifier__n_jobs' : [-1,2,4]},
-          {'randomfroestclassifier__max_depth' : [6,8,10,12]},
-          {'randomfroestclassifier__min_samples_leaf' : [3,5,7,10],'randomfroestclassifier__min_samples_split' : [2,3,5,10]},
-          {'randomfroestclassifier__min_samples_split' : [2,3,5,10]},
-          {'randomfroestclassifier__n_jobs' : [-1,2,4]}
+params = [{'randomforestclassifier__n_estimators':[100,200],'randomforestclassifier__min_samples_leaf' : [3,5,7,10],'randomforestclassifier__max_depth' : [6,8,10,12],'randomforestclassifier__min_samples_split' : [2,3,5,10]},
+        
+          {'randomforestclassifier__min_samples_leaf' : [3,5,7,10],'randomforestclassifier__min_samples_split' : [2,3,5,10]},
+          {'randomforestclassifier__min_samples_split' : [2,3,5,10]}
+     
 ]# __ 언더바 두개 모델과 파라미터 구분
-#pipe = make_pipeline(MinMaxScaler(),RandomForestClassifier())
+
 '''
-params = [{'rf__n_estimators':[100,200],'rf__min_samples_leaf' : [3,5,7,10],'rf__max_depth' : [6,8,10,12],'rf__min_samples_split' : [2,3,5,10],'rf__n_jobs' : [-1,2,4]},
+params = [{'rf__n_estimators':[100,200],'rf__min_samples_leaf' : [3,5,7,10]},
           {'rf__max_depth' : [6,8,10,12]},
           {'rf__min_samples_leaf' : [3,5,7,10],'rf__min_samples_split' : [2,3,5,10]},
           {'rf__min_samples_split' : [2,3,5,10]},
           {'rf__n_jobs' : [-1,2,4]}
 ]
 
-kfold = KFold(n_splits=5,random_state=76,shuffle=True)
-
 pipe = Pipeline([("scaler",MinMaxScaler()),('rf',RandomForestClassifier())]) # 둘 차이 비교 다른것도 마찬가지
 
+
+kfold = KFold(n_splits=5,random_state=76,shuffle=True)
+#pipe = make_pipeline(MinMaxScaler(),RandomForestClassifier())
 start = time.time()
 model = GridSearchCV(pipe,params,cv=kfold,verbose=1)
 
@@ -61,27 +62,19 @@ print("최적의 매개변수 ",model.best_estimator_)
 end = time.time() - start
 print('걸린시간 : ', end)
 '''
+make_pipeline
+acc :  0.9648734177215189
+{'randomforestclassifier__max_depth': 12, 'randomforestclassifier__min_samples_leaf': 3, 'randomforestclassifier__min_samples_split': 10, 'randomforestclassifier__n_estimators': 100}
+최적의 매개변수  Pipeline(steps=[('minmaxscaler', MinMaxScaler()),
+                ('randomforestclassifier',
+                 RandomForestClassifier(max_depth=12, min_samples_leaf=3,
+                                        min_samples_split=10))])
+걸린시간 :  115.07861018180847
 
-Fitting 5 folds for each of 411 candidates, totalling 2055 fits
-acc :  0.41864252573753474
-최적의 매개변수  RandomForestRegressor(max_depth=8, min_samples_leaf=5, min_samples_split=10,
-                      n_jobs=-1)
-0.42084821863710964
-걸린시간 :  666.9764559268951
-
-Fitting 5 folds for each of 10 candidates, totalling 50 fits
-acc :  0.41247448540077986
-최적의 매개변수  RandomForestRegressor(max_depth=12, min_samples_leaf=7, n_jobs=4)
-0.4360939539989588
-걸린시간 :  14.515647888183594
-
-
-acc :  0.961904761904762
-{'rf__max_depth': 10, 'rf__min_samples_leaf': 5, 'rf__min_samples_split': 5, 'rf__n_estimators': 200, 'rf__n_jobs': 4}
+Pipeline
+acc :  0.9649050632911391
+{'rf__max_depth': 10}
 최적의 매개변수  Pipeline(steps=[('scaler', MinMaxScaler()),
-                ('rf',
-                 RandomForestClassifier(max_depth=10, min_samples_leaf=5,
-                                        min_samples_split=5, n_estimators=200,
-                                        n_jobs=4))])
-걸린시간 :  659.5446753501892
+                ('rf', RandomForestClassifier(max_depth=10))])
+걸린시간 :  25.05713677406311
 '''
