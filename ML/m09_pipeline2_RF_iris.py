@@ -53,6 +53,6 @@ print('acc:',accuracy_score(y_test,y_pred)) # model.score(x_test,y_test) 와 같
 end = time.time() - start
 print('걸린시간 : ', end)
 '''
-acc: 0.9590643274853801
-걸린시간 :  0.12716174125671387
+acc: 0.9777777777777777
+걸린시간 :  0.09481477737426758
 '''

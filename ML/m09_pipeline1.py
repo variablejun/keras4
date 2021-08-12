@@ -30,7 +30,7 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor, Rand
 
 from sklearn.pipeline import make_pipeline, Pipeline
 
-# 여러가지 트리연산들을 합치는 것
+
 model = make_pipeline(MinMaxScaler(),SVC())
 
 score = cross_val_score(model,x_train,y_train,cv=kfold)
