@@ -7,7 +7,7 @@
 #5중위값으로채우기
 #6 bogan
 7# 모델링 결측치를 빼고 가중치를 하고 predict를 할때 예측값에 결측치를 넣어줌
-#9 부스트 계열 결측치에 자유롭다(트리계열)
+#9 부스트 계열 결측치에 자유롭다(트리계열) xg,dt,rf,lgbm 사용
 '''
 #[1,np.nan, np.nan, 9,10]
 from pandas import DataFrame, Series

@@ -24,6 +24,13 @@ print('이상치 위치', out_loc)
 6.0
 49.0
 이상치 위치 (array([ 2, 10], dtype=int64),)
+
+이상치 처리
+1, 삭제
+2, nan 처리후 -> 보간 // linear
+3, 결측치와 유사
+4, scaler rubs,qeunt
+5, 모델링 트리계열 xg,dt,rf,lgbm 사용
 '''
 # 시각화 위 데이타 boxplot
 import matplotlib.pyplot as plt
