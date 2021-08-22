@@ -14,16 +14,16 @@ from sklearn.preprocessing import OneHotEncoder,StandardScaler
 scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)
 x_test = scaler.fit_transform(x_test)
-x_train = x_train.reshape(50000, 32* 32*5)
-x_test = x_test.reshape(10000, 32*32*5)
+x_train = x_train.reshape(50000, 32, 32,3)
+x_test = x_test.reshape(10000, 32,32,3)
 
 
 
 
 # fully c 모델,False적용해서 풀리커넥이 아닌 경우 , avplool적용
+#ValueError: Input size must be at least 71x71; got `input_shape=(32, 32, 3)`
 
-
-xcep = Xception(weights='imagenet',include_top=False,input_shape=(32*32*5))
+xcep = Xception(weights='imagenet',include_top=False,input_shape=(32,32,3))
 xcep.trainable=True
 model = Sequential()
 model.add(xcep)
